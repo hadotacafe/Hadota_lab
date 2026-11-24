@@ -558,9 +558,52 @@ button:focus-visible,input:focus-visible{outline:2px solid #f0d8a2!important;out
 }
 </style>
 
+
+<style id="hadota-sculpted-3d-logo">
+#brandName.arabic-brand{
+ position:relative;isolation:isolate;display:inline-block;
+ font-family:'Aref Ruqaa',serif!important;
+ font-size:58px!important;font-weight:700!important;
+ line-height:1.22!important;letter-spacing:0!important;
+ color:#f8e8c4!important;
+ -webkit-text-fill-color:#f8e8c4!important;
+ -webkit-text-stroke:1.15px #f4d99e;
+ background:linear-gradient(180deg,#fffdf0 0%,#f9e8b8 18%,#e7c77f 38%,#b98237 59%,#f8e6b3 73%,#9b6729 100%);
+ -webkit-background-clip:text!important;background-clip:text!important;
+ -webkit-text-fill-color:transparent!important;
+ text-shadow:
+  0 -1px 0 #fff4d2,
+  0 1px 0 #d6ad68,
+  0 2px 0 #b98a47,
+  0 3px 0 #98652e,
+  0 4px 0 #7b4e22,
+  0 5px 0 #603916,
+  0 6px 0 #48270f,
+  0 8px 3px rgba(0,0,0,.72),
+  0 13px 18px rgba(0,0,0,.55)!important;
+ filter:drop-shadow(0 0 12px rgba(221,180,104,.22));
+ transform:perspective(650px) rotateX(9deg);
+ transform-origin:50% 75%;
+}
+#brandName.arabic-brand::before{
+ content:attr(data-brand);position:absolute;inset:0;z-index:-1;
+ color:#75451d;-webkit-text-fill-color:#75451d;
+ -webkit-text-stroke:1px #9b6b34;
+ transform:translateY(3px);
+ text-shadow:0 2px 0 #4a2b13,0 5px 9px rgba(0,0,0,.8);
+}
+#brandName.arabic-brand::after{
+ content:"";position:absolute;inset:5% 8% 13%;
+ z-index:-2;pointer-events:none;
+ background:radial-gradient(ellipse,rgba(240,202,130,.18),transparent 68%);
+ filter:blur(12px);
+}
+@media(max-width:760px){#brandName.arabic-brand{font-size:51px!important}}
+@media(prefers-reduced-motion:reduce){#brandName.arabic-brand{transform:none}}
+</style>
 </head>
 <body><div class="app">
-<header class="top"><div class="toprow"><button class="lang" onclick="toggleLang()" id="langBtn">English</button><div style="text-align:center"><div class="brand" id="brandName">حدوته</div><div class="tag">COFFEE · DESSERT · MOMENTS</div><div style="height:1px;width:105px;margin:7px auto 0;background:linear-gradient(90deg,transparent,#cda45d,transparent)"></div></div><span style="font-size:22px;color:#e4c58e">✦</span></div></header>
+<header class="top"><div class="toprow"><button class="lang" onclick="toggleLang()" id="langBtn">English</button><div style="text-align:center"><div class="brand" id="brandName" data-brand="حدوته">حدوته</div><div class="tag">COFFEE · DESSERT · MOMENTS</div><div style="height:1px;width:105px;margin:7px auto 0;background:linear-gradient(90deg,transparent,#cda45d,transparent)"></div></div><span style="font-size:22px;color:#e4c58e">✦</span></div></header>
 <main>
 <section id="home" class="view active">
 <div class="hero"><div class="hero-copy"><div class="kicker">COFFEE · DESSERT · MOMENTS</div><h1 id="heroTitle">حكايتك الحلوة تبدأ هنا</h1><p id="heroText">قهوة مظبوطة، حلويات تحبها، ولحظات تستاهل تتعاش.</p><div class="hero-actions"><button class="hero-primary" onclick="go('categories')">اكتشف المنيو ←</button><button class="hero-secondary" onclick="go('searchView')">ابحث عن طلبك</button></div></div><div class="hero-note">HADOTA<small>YOUR DAILY MOMENT</small></div></div>
@@ -641,6 +684,7 @@ document.documentElement.lang=lang;
 document.documentElement.dir=lang==='ar'?'rtl':'ltr';
 langBtn.textContent=lang==='ar'?'English':'العربية';
 brandName.textContent=lang==='ar'?'حدوته':'Hadota Cafe';
+brandName.dataset.brand=brandName.textContent;
 document.querySelectorAll('.signature-name').forEach(el=>el.textContent=lang==='ar'?'حدوته':'Hadota Cafe');
 applyBrandFont();
 heroTitle.textContent=lang==='ar'?'حكايتك الحلوة تبدأ هنا':'Your lovely moment starts here';
