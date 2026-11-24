@@ -237,35 +237,37 @@ html[lang="en"] body, html[lang="en"] body button, html[lang="en"] body input, h
 @media(min-width:600px){.app{margin:0 auto!important}.hero{min-height:310px!important}.cat{height:150px!important}}
 </style>
 <style id="hadota-logo-motion">
-/* Alternative: elegant slow lift, settle, and soft golden pulse */
+/* Premium motion: restrained vertical drift with a soft metallic light pass */
 #brandName{
   display:inline-block!important;
   position:relative!important;
   z-index:2;
-  padding:0 5px 5px;
+  padding:0 5px 7px;
   font-size:clamp(43px,9vw,58px)!important;
   line-height:1.35!important;
-  text-shadow:0 3px 0 rgba(95,59,25,.8),0 7px 18px rgba(0,0,0,.7),0 0 22px rgba(215,181,116,.32)!important;
-  animation:hadotaElegantLift 10s cubic-bezier(.37,0,.23,1) infinite!important;
-  transform-origin:50% 75%;
-  will-change:transform;
+  text-shadow:0 2px 0 rgba(95,59,25,.55),0 5px 16px rgba(0,0,0,.58)!important;
+  animation:hadotaSignature 7.8s cubic-bezier(.45,0,.25,1) infinite!important;
+  transform-origin:50% 70%;
+  will-change:transform,filter;
 }
 #brandName::after{
   content:"";
   position:absolute;
-  left:7%;right:7%;bottom:0;height:2px;border-radius:50%;
-  background:linear-gradient(90deg,transparent,#d7b574 22%,#fff0c8 50%,#d7b574 78%,transparent);
-  box-shadow:0 0 12px rgba(215,181,116,.65);
-  animation:hadotaElegantPulse 10s ease-in-out infinite;
+  left:8%;right:8%;bottom:1px;height:1px;border-radius:50%;
+  background:linear-gradient(90deg,transparent 0%,#b88b49 20%,#fff0c8 50%,#b88b49 80%,transparent 100%);
+  box-shadow:0 0 8px rgba(215,181,116,.45);
+  transform:scaleX(.72);
+  transform-origin:center;
+  animation:hadotaSignatureLine 7.8s ease-in-out infinite;
 }
-@keyframes hadotaElegantLift{
-  0%,100%{transform:translateY(0) rotate(0) scale(1)}
-  35%{transform:translateY(-10px) rotate(-1deg) scale(1.025)}
-  65%{transform:translateY(2px) rotate(.4deg) scale(1.005)}
+@keyframes hadotaSignature{
+  0%,100%{transform:translate3d(0,0,0) scale(1);filter:drop-shadow(0 0 0 rgba(215,181,116,0))}
+  38%{transform:translate3d(0,-4px,0) scale(1.012);filter:drop-shadow(0 3px 7px rgba(215,181,116,.18))}
+  58%{transform:translate3d(0,-2px,0) scale(1.006);filter:drop-shadow(0 2px 5px rgba(215,181,116,.1))}
 }
-@keyframes hadotaElegantPulse{
+@keyframes hadotaSignatureLine{
   0%,100%{opacity:.45;transform:scaleX(.62)}
-  45%{opacity:1;transform:scaleX(1)}
+  42%,58%{opacity:.95;transform:scaleX(1)}
 }
 @media(prefers-reduced-motion:reduce){
  #brandName,#brandName::after{animation:none!important}
