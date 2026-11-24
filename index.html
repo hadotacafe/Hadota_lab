@@ -279,7 +279,26 @@ html[lang="en"] body, html[lang="en"] body button, html[lang="en"] body input, h
 .cats .cat .cat-arrow{display:none!important;visibility:hidden!important}
 .cats .cat::after{display:none!important;content:none!important}
 .cats .cat .photo{justify-content:flex-start!important}
-</style></style></head>
+</style></style><style id="hadota-remove-card-floating-shapes">
+/* Remove every floating decorative tile/shape from menu cards */
+.cats .cat-icon,
+.cats .cat-glint,
+.cats .cat-arrow,
+.cats .cat .symbol,
+.cats .cat::before,
+.cats .cat::after,
+.cats .cat .photo::before,
+.cats .cat .photo::after{
+  display:none!important;
+  content:none!important;
+  animation:none!important;
+  transform:none!important;
+  opacity:0!important;
+  visibility:hidden!important;
+  box-shadow:none!important;
+}
+.cats .cat .photo{justify-content:flex-start!important}
+</style></head>
 <body><div class="app">
 <header class="top"><div class="toprow"><button class="lang" onclick="toggleLang()" id="langBtn">English</button><div style="text-align:center"><div class="brand" id="brandName">حدوته</div><div class="tag">COFFEE · DESSERT · MOMENTS</div><div style="height:1px;width:105px;margin:7px auto 0;background:linear-gradient(90deg,transparent,#cda45d,transparent)"></div></div><span style="font-size:22px;color:#e4c58e">✦</span></div></header>
 <main>
