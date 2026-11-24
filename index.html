@@ -807,13 +807,13 @@ const descriptions={cold:'COLD & REFRESHING',juice:'FRESH JUICES',coffee:'COFFEE
 function nm(c){return lang==='en'?(c.en||names.en[c.id]||''):(c.ar||names.ar[c.id]||'')}
 function menuItems(c){return lang==='en'?c.items.filter(it=>!['Qass & Salloum Shisha','Fenugreek','Fenugreek with Milk'].includes(it[1])):c.items}
 const categoryPhotos={
-cold:'https://tcdn.mindtrip.ai/images/599533/q5rcq2.png',
-juice:'https://tcdn.mindtrip.ai/images/599533/q5rcq2.png',
-coffee:'https://framerusercontent.com/images/10WG42mi1xgbJd6Ki9jmOMDgVE8.jpg?height=999&width=1600',
-hot:'https://static-cms.routard.com/web-routard/uploads/xlarge_el-fishawy-le-caire-egypte.1520622_e8958a68bf.jpg',
-mix:'https://tcdn.mindtrip.ai/images/599533/q5rcq2.png',
-shisha:'https://www.thisiscairo.com/wp-content/uploads/2022/09/image1567769956329-9.png',
-dessert:'https://assets.cairo360.com/app/uploads/2023/03/29/337424747_130068593352148_4139567544061606708_n.jpg'
+cold:'https://menu.restaurantguru.com/m3/menu-Kanaka-cafe-and-More.jpg',
+juice:'https://menu.restaurantguru.com/m9/Spade-Lounge-menu-1.jpg',
+coffee:'https://resizer.otstatic.com/v2/photos/wide-huge/3/51546001.webp',
+hot:'https://assets.cairo360.com/app/uploads/2026/02/03/Chocolate-Lounge-Article.jpg',
+mix:'https://menu.restaurantguru.com/m4/Cafe-Bokharest-El-Maadi-menu.jpg',
+shisha:'https://cdn2.wingie.com/uploads/f_webp%2Cs_825x620%2Cq_60%2Cfit_cover/kafyh_Black_Mood_134da11611.png',
+dessert:'https://menu.restaurantguru.com/m6/OMAR-AFANDI-CAFE-amr-afnda-kafyh-Cafe-menu.jpg'
 };
 function card(c){let img=categoryPhotos[c.id]||'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1600&q=92';let title=lang==='en'?(c.en||names.en[c.id]||''):(c.ar||names.ar[c.id]||'');let subtitle=lang==='en'?(descriptions[c.id]||''):(c.en||names.en[c.id]||'');let action=lang==='en'?'EXPLORE':'اكتشف القسم';return `<button class="cat" data-bg="${img}" aria-label="${title}" onclick="openCat('${c.id}')"><span class="cat-photo" aria-hidden="true"></span><span class="cat-info"><span class="cat-subtitle">${subtitle}</span><b>${title}</b><span class="cat-action">${action}<i aria-hidden="true">↗</i></span></span></button>`}
 function loadCategoryImages(){const cards=document.querySelectorAll('.cat[data-bg]');if(!('IntersectionObserver' in window)){cards.forEach(el=>{el.style.backgroundImage="linear-gradient(0deg,#160802e8 0%,#16080220 78%),url('"+el.dataset.bg+"')";el.removeAttribute('data-bg')});return}const observer=new IntersectionObserver((entries,obs)=>{entries.forEach(entry=>{if(entry.isIntersecting){const el=entry.target;el.style.backgroundImage="linear-gradient(0deg,#160802e8 0%,#16080220 78%),url('"+el.dataset.bg+"')";el.removeAttribute('data-bg');obs.unobserve(el)}})},{rootMargin:'50px'});cards.forEach(el=>observer.observe(el))}
