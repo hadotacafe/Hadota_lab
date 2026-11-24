@@ -916,6 +916,22 @@ body{background:#100804}
 }
 </style>
 
+
+<style id="hadota-luxury-product-menu">
+.luxury-menu-grid{max-width:1080px;margin:0 auto;padding:0 clamp(12px,3vw,28px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.luxury-product{position:relative;overflow:hidden;border:1px solid rgba(215,181,116,.42);border-radius:18px;background:linear-gradient(145deg,#38200f,#180b05);box-shadow:0 16px 38px #0007;min-width:0}
+.luxury-product .luxury-photo{width:100%;height:190px;display:block;object-fit:cover;filter:saturate(.88);transition:transform .45s}
+.luxury-product:hover .luxury-photo{transform:scale(1.045)}
+.luxury-product:after{content:"";position:absolute;inset:0 0 auto;height:190px;background:linear-gradient(0deg,rgba(20,9,3,.8),transparent 65%);pointer-events:none}
+.luxury-product-info{position:relative;padding:13px 14px 15px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.luxury-product-name{font-size:14px;font-weight:700;color:#f8e9cd;line-height:1.7}
+.luxury-product-en{font:italic 12px 'Cormorant Garamond',serif;color:#c9ad7a;margin-top:2px;direction:ltr;text-align:right}
+.luxury-product-price{white-space:nowrap;color:#f0d18e;font-size:14px;font-weight:800}
+.luxury-product-price:empty{display:none}
+@media(max-width:760px){.luxury-menu-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:0 13px}.luxury-product .luxury-photo{height:145px}.luxury-product:after{height:145px}.luxury-product-info{padding:10px}.luxury-product-name{font-size:12px}.luxury-product-price{font-size:12px}}
+@media(max-width:380px){.luxury-product .luxury-photo{height:125px}.luxury-product-info{align-items:flex-start;flex-direction:column;gap:3px}}
+</style>
+
 </head>
 <body><div class="app">
 <header class="top"><div class="toprow"><button class="lang" onclick="toggleLang()" id="langBtn">English</button><div style="text-align:center"><div class="brand" id="brandName" data-brand="حدوته">حدوته</div><div class="tag">COFFEE · DESSERT · MOMENTS</div><div style="height:1px;width:105px;margin:7px auto 0;background:linear-gradient(90deg,transparent,#cda45d,transparent)"></div></div><span style="font-size:22px;color:#e4c58e">✦</span></div></header>
@@ -1052,5 +1068,31 @@ function drawShop(){
 function addToCart(){hadotaCart++;const b=document.getElementById('cartCount');if(b)b.textContent=hadotaCart;const c=document.getElementById('cartSummary');if(c)c.textContent=hadotaCart;}
 function quickFind(v){searchInput.value=v;if(document.getElementById('home').classList.contains('active'))go('searchView');searchItems();}
 drawShop();
+
+
+/* Luxury Product presentation for every menu category; menu data and prices remain unchanged. */
+const luxuryPhotos={
+ cold:'https://images.unsplash.com/photo-1513558161293-cасe?auto=format&fit=crop&w=900&q=88',
+ juice:'https://images.unsplash.com/photo-1546173159-315724a31696?auto=format&fit=crop&w=900&q=88',
+ coffee:'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=900&q=88',
+ hot:'https://images.unsplash.com/photo-1544787219-7f47dc7d4f8b?auto=format&fit=crop&w=900&q=88',
+ mix:'https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=900&q=88',
+ shisha:'https://charsi.ae/imgs/Shisha.jpg',
+ dessert:'https://static.aljamila.com/styles/1100x732/public/redvelvet-cheescake.jpg?h=b69e0e0e'
+};
+function renderLuxuryCategory(id){
+ const c=data.find(x=>x.id===id);if(!c)return;
+ detailTitle.textContent=nm(c);
+ items.innerHTML='<div class="luxury-menu-grid">'+menuItems(c).map(([ar,en,p,img])=>{
+ const photo=(img&&pics[img])||luxuryPhotos[id]||categoryPhotos[id];
+ const title=lang==='ar'?ar:(en||'');
+ const price=p==null?'':p+' '+(lang==='ar'?'ج.م':'EGP');
+ return '<article class="luxury-product"><img class="luxury-photo" src="'+photo+'" loading="lazy" decoding="async" alt="'+title+'"><div class="luxury-product-info"><div><div class="luxury-product-name">'+title+'</div><div class="luxury-product-en">'+(lang==='ar'?en:'')+'</div></div><b class="luxury-product-price">'+price+'</b></div></article>';
+ }).join('')+'</div>';
+}
+const previousOpenCat=openCat;
+openCat=function(id){window.currentCat=id;renderLuxuryCategory(id);go('detail')};
+const previousToggleLang=toggleLang;
+toggleLang=function(){previousToggleLang();if(window.currentCat)renderLuxuryCategory(window.currentCat)};
 
 </script></body></html>
