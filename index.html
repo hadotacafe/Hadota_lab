@@ -828,6 +828,56 @@ body{background:radial-gradient(ellipse at 50% -12%,#57351d 0%,#241209 42%,#1007
  .experience-cta button{width:100%}
 }
 </style>
+<style id="hadota-modern-luxury-direction">
+/* Quiet luxury: restrained gold, espresso surfaces, editorial spacing */
+:root{--gold:#c9a568;--gold2:#e8d3aa;--cream:#f4ead8}
+body{background:#100804}
+.app{max-width:1100px;background:#180b06}
+.top{background:#180b06;border-bottom:1px solid #70502d;box-shadow:none;padding:14px 28px}
+.hero{min-height:390px;margin:22px 24px 42px;border:0;border-radius:4px;box-shadow:none;padding:clamp(28px,6vw,76px);background-image:linear-gradient(90deg,rgba(18,8,4,.94),rgba(18,8,4,.58) 58%,rgba(18,8,4,.14)),url('https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=2000&q=90');}
+.hero:after{display:none}
+.hero-copy{max-width:510px}
+.hero .kicker{font-size:10px;letter-spacing:4px;color:#c9a568}
+.hero h1{font-size:clamp(30px,4.4vw,48px);font-weight:600;line-height:1.4;margin:18px 0 10px}
+.hero p{color:#d3c1a2;font-size:14px;max-width:390px}
+.hero-primary{background:#c9a568;color:#1a0d06;border:1px solid #c9a568;border-radius:3px;box-shadow:none}
+.hero-secondary{border:1px solid #b28d55;border-radius:3px;background:transparent;color:#ead9b8}
+.hero-note{font-size:23px;letter-spacing:6px;color:#d6b77f}
+.section-head{margin:0 26px 18px;border-bottom:1px solid #6d4d2b;padding-bottom:12px}
+.section-head h2{font-size:22px!important;font-weight:600}
+.section-head small{letter-spacing:1px}
+.cats{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;padding:0 24px}
+.cat{height:230px;border-radius:3px;border:1px solid #5f4529;box-shadow:none;background:#24140b}
+.cat:hover{transform:translateY(-3px);box-shadow:0 12px 24px #0005;border-color:#c9a568}
+.cat .photo{background:linear-gradient(0deg,rgba(14,6,3,.88),rgba(14,6,3,.12) 68%);padding:18px}
+.cat b{font-size:17px!important;font-weight:600}
+.cat small{font-size:9px!important;letter-spacing:2.4px;color:#d2b27b}
+.experience-block{margin:55px 24px 0;padding:38px 30px;border-radius:3px;background:#211108;border:1px solid #654a2a;box-shadow:none}
+.experience-heading{margin-bottom:28px}
+.experience-heading h2{font-size:27px;font-weight:500}
+.experience-grid{gap:12px}
+.experience-card{height:210px;border-radius:2px;border:0}
+.experience-card:after{background:linear-gradient(transparent,#100703d9)}
+.experience-cta{border-radius:2px;border:1px solid #6d502e;background:#180b06}
+.experience-cta button{border-radius:2px;background:#c9a568;border:0}
+.promo{border-radius:3px;box-shadow:none}
+.detail-hero{border-radius:3px}
+.list,.dessert{border-radius:3px}
+.item{padding:16px 18px}
+.bottom{background:#180b06;border-top:1px solid #6d502e;backdrop-filter:none}
+.bottom button.on{color:#e5c88f}
+@media(min-width:760px){.hero{margin-left:24px;margin-right:24px}.cats{grid-template-columns:repeat(3,minmax(0,1fr))}.cat{height:250px}}
+@media(max-width:600px){
+ .hero{min-height:300px;margin:14px 13px 32px;padding:25px 20px;border-radius:3px}
+ .hero-note{display:none}
+ .cats{grid-template-columns:repeat(2,minmax(0,1fr));padding:0 13px;gap:10px}
+ .cat{height:168px}
+ .experience-block{margin:38px 13px 0;padding:25px 15px}
+ .experience-grid{gap:8px}
+ .experience-card{height:140px}
+ .section-head{margin-left:14px;margin-right:14px}
+}
+</style>
 </head>
 <body><div class="app">
 <header class="top"><div class="toprow"><button class="lang" onclick="toggleLang()" id="langBtn">English</button><div style="text-align:center"><div class="brand" id="brandName" data-brand="حدوته">حدوته</div><div class="tag">COFFEE · DESSERT · MOMENTS</div><div style="height:1px;width:105px;margin:7px auto 0;background:linear-gradient(90deg,transparent,#cda45d,transparent)"></div></div><span style="font-size:22px;color:#e4c58e">✦</span></div></header>
