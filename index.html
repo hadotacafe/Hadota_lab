@@ -237,43 +237,22 @@ html[lang="en"] body, html[lang="en"] body button, html[lang="en"] body input, h
 @media(min-width:600px){.app{margin:0 auto!important}.hero{min-height:310px!important}.cat{height:150px!important}}
 </style>
 <style id="hadota-logo-motion">
-/* Elegant animated Hadota wordmark */
+/* Smooth vertical floating motion for the Hadota wordmark */
 #brandName{
-  position:relative;
   display:inline-block;
-  transform-origin:center;
-  animation:hadotaLogoFloat 4.8s ease-in-out infinite;
-  background:linear-gradient(105deg,#f2dfb9 0%,#f2dfb9 35%,#fff4d8 48%,#cda45d 55%,#f2dfb9 72%,#f2dfb9 100%);
-  background-size:230% 100%;
-  -webkit-background-clip:text;
-  background-clip:text;
-  -webkit-text-fill-color:transparent;
-  animation-name:hadotaLogoFloat,hadotaLogoShine;
-  animation-duration:4.8s,6.5s;
-  animation-timing-function:ease-in-out,ease-in-out;
-  animation-iteration-count:infinite,infinite;
+  position:relative;
+  transform:translateY(0);
+  animation:hadotaVerticalFloat 2.8s cubic-bezier(.45,0,.55,1) infinite;
+  will-change:transform;
 }
-@keyframes hadotaLogoFloat{
-  0%,100%{transform:translateY(0) scale(1)}
-  50%{transform:translateY(-2px) scale(1.025)}
+@keyframes hadotaVerticalFloat{
+  0%,100%{transform:translateY(0)}
+  25%{transform:translateY(-7px)}
+  50%{transform:translateY(0)}
+  75%{transform:translateY(5px)}
 }
-@keyframes hadotaLogoShine{
-  0%,35%{background-position:100% 50%}
-  70%,100%{background-position:0% 50%}
-}
-#brandName::after{
-  content:"";
-  position:absolute;
-  left:12%;right:12%;bottom:-4px;height:1px;
-  background:linear-gradient(90deg,transparent,rgba(215,181,116,.8),transparent);
-  transform:scaleX(.55);
-  transform-origin:center;
-  animation:hadotaLogoLine 4.8s ease-in-out infinite;
-}
-@keyframes hadotaLogoLine{0%,100%{opacity:.35;transform:scaleX(.55)}50%{opacity:1;transform:scaleX(1)}}
 @media(prefers-reduced-motion:reduce){
- #brandName,#brandName::after{animation:none!important}
- #brandName{-webkit-text-fill-color:#f2dfb9;background:none}
+  #brandName{animation:none!important;transform:none!important}
 }
 </style></head>
 <body><div class="app">
