@@ -950,13 +950,13 @@ body{background:#100804}
 </section>
 <section id="categories" class="view"><div class="section-signature"><span class="signature-name">حدوته</span><i>COFFEE · DESSERT · MOMENTS</i></div><button class="back" onclick="go('home')" id="backCats">← الرئيسية</button><div class="section-head"><h2 id="allCatsTitle">كل الأقسام</h2></div><div class="cats" id="allCats"></div></section>
 <section id="detail" class="view"><div class="section-signature"><span class="signature-name">حدوته</span><i>COFFEE · DESSERT · MOMENTS</i></div><button class="back" onclick="go('categories')" id="backDetail">← رجوع</button><div class="detail-hero"><h1 id="detailTitle"></h1></div><div id="items"></div></section>
-<section id="searchView" class="view"><div class="section-signature"><span class="signature-name">حدوته</span><i>COFFEE · DESSERT · MOMENTS</i></div><div class="section-head" style="margin-top:20px"><h2 id="searchTitle">ابحث في المنيو</h2></div><input class="searchbox" id="searchInput" placeholder="اكتب اسم الصنف..." oninput="searchItems()"><div class="list" id="searchResults"></div></section>
+<section id="searchView" class="view"><div class="section-signature"><span class="signature-name">حدوته</span><i>COFFEE · DESSERT · MOMENTS</i></div><div class="section-head" style="margin-top:20px"><h2 id="searchTitle">ابحث في المنيو</h2></div><input class="searchbox" id="searchInput" placeholder="اكتب اسم الصنف..." oninput="searchItems()"><div class="list" id="searchResults"></div></section><section id="cartView" class="view"><div class="section-head" style="margin-top:25px"><h2>سلة الطلبات</h2></div><div class="list"><div class="item"><span>عدد الأصناف المضافة</span><b class="price" id="cartSummary">0</b></div></div></section><section id="profileView" class="view"><div class="section-head" style="margin-top:25px"><h2>حسابي</h2></div><div class="list"><div class="item"><span>أهلاً بك في حدوته</span><b class="price">HADOTA</b></div></div></section>
 </main>
 <footer class="site-footer"><div class="footer-brand">حدوته</div><small>COFFEE · DESSERT · MOMENTS</small><div class="footer-links"><button onclick="go('home')">الرئيسية</button><button onclick="go('categories')">المنيو</button><button onclick="go('searchView')">بحث</button></div><small class="copyright">© HADOTA CAFE</small></footer></div>
 <nav class="bottom"><div class="bottomin">
 <button class="on" data-go="home" onclick="nav('home',this)"><em>⌂</em><span data-ar="الرئيسية" data-en="Home">الرئيسية</span></button>
 <button data-go="categories" onclick="nav('categories',this)"><em>▦</em><span data-ar="الأقسام" data-en="Menu">الأقسام</span></button>
-<button data-go="searchView" onclick="nav('searchView',this)"><em>⌕</em><span data-ar="بحث" data-en="Search">بحث</span></button>
+<button data-go="searchView" onclick="nav('searchView',this)"><em>⌕</em><span data-ar="بحث" data-en="Search">بحث</span></button><button data-go="cartView" onclick="nav('cartView',this)"><em>🛒</em><span>السلة <b id="cartCount" class="shop-cart-count">0</b></span></button><button data-go="profileView" onclick="nav('profileView',this)"><em>♙</em><span>حسابي</span></button>
 </div></nav>
 <script>
 // Resolve page elements explicitly instead of relying on browser-created global ID variables.
@@ -1063,8 +1063,8 @@ function drawShop(){
  cats.innerHTML=data.map(c=>'<button class="shop-category" onclick="openCat(\''+c.id+'\')"><b>'+icons[c.id]+'</b>'+nm(c)+'</button>').join('');
  products.innerHTML=featured.map((p,i)=>'<article class="product-card"><img src="'+p.img+'" loading="lazy" alt="'+(lang==='ar'?p.name:p.en)+'"><button class="product-fav" aria-label="إضافة للمفضلة" onclick="this.classList.toggle(\'active\');this.textContent=this.classList.contains(\'active\')?\'♥\':\'♡\'">♡</button><div class="product-info"><div class="product-name">'+(lang==='ar'?p.name:p.en)+'</div><div class="product-bottom"><span class="product-price">'+p.price+' '+(lang==='ar'?'ج.م':'EGP')+'</span><button class="product-add" onclick="addToCart()">'+(lang==='ar'?'＋ أضف':'＋ Add')+'</button></div></div></article>').join('');
 }
-function addToCart(){hadotaCart++;const b=document.getElementById('cartCount');if(b)b.textContent=hadotaCart;}
-function quickFind(v){searchInput.value=v;go('searchView');searchItems();searchInput.focus();}
+function addToCart(){hadotaCart++;const b=document.getElementById('cartCount');if(b)b.textContent=hadotaCart;const c=document.getElementById('cartSummary');if(c)c.textContent=hadotaCart;}
+function quickFind(v){searchInput.value=v;if(document.getElementById('home').classList.contains('active'))go('searchView');searchItems();}
 drawShop();
 
 </script></body></html>
