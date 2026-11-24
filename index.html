@@ -237,7 +237,7 @@ html[lang="en"] body, html[lang="en"] body button, html[lang="en"] body input, h
 @media(min-width:600px){.app{margin:0 auto!important}.hero{min-height:310px!important}.cat{height:150px!important}}
 </style>
 <style id="hadota-logo-motion">
-/* Prominent, premium vertical brand movement */
+/* Slow, graceful vertical floating motion */
 #brandName{
   display:inline-block!important;
   position:relative!important;
@@ -246,7 +246,7 @@ html[lang="en"] body, html[lang="en"] body button, html[lang="en"] body input, h
   font-size:clamp(43px,9vw,58px)!important;
   line-height:1.35!important;
   text-shadow:0 3px 0 rgba(95,59,25,.8),0 7px 18px rgba(0,0,0,.7),0 0 22px rgba(215,181,116,.32)!important;
-  animation:hadotaShowcaseFloat 2.15s cubic-bezier(.42,0,.28,1) infinite!important;
+  animation:hadotaShowcaseFloat 6.8s cubic-bezier(.42,0,.28,1) infinite!important;
   will-change:transform;
 }
 #brandName::after{
@@ -257,16 +257,16 @@ html[lang="en"] body, html[lang="en"] body button, html[lang="en"] body input, h
   border-radius:50%;
   background:linear-gradient(90deg,transparent,#d7b574 22%,#fff0c8 50%,#d7b574 78%,transparent);
   box-shadow:0 0 12px rgba(215,181,116,.75);
-  animation:hadotaShowcaseGlow 2.15s ease-in-out infinite;
+  animation:hadotaShowcaseGlow 6.8s ease-in-out infinite;
 }
 @keyframes hadotaShowcaseFloat{
   0%,100%{transform:translate3d(0,0,0) scale(1)}
-  22%{transform:translate3d(0,-11px,0) scale(1.035)}
-  48%{transform:translate3d(0,-2px,0) scale(1.01)}
-  74%{transform:translate3d(0,7px,0) scale(.995)}
+  25%{transform:translate3d(0,-8px,0) scale(1.02)}
+  50%{transform:translate3d(0,0,0) scale(1)}
+  75%{transform:translate3d(0,5px,0) scale(.995)}
 }
 @keyframes hadotaShowcaseGlow{
-  0%,100%{opacity:.45;transform:scaleX(.55)}
+  0%,100%{opacity:.5;transform:scaleX(.65)}
   50%{opacity:1;transform:scaleX(1)}
 }
 @media(prefers-reduced-motion:reduce){
