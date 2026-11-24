@@ -915,14 +915,29 @@ body{background:#100804}
  letter-spacing:4px!important;
 }
 </style>
+<style id="hadota-commerce-home">
+.shop-search{display:flex;align-items:center;gap:10px;margin:17px auto 0;max-width:760px;padding:0 15px;height:48px;border:1px solid #80613a;border-radius:8px;background:#2a170d;color:#e8d2a8}
+.shop-search>span{font-size:23px;color:#d5b477}.shop-search input{flex:1;min-width:0;border:0;outline:0;background:transparent;color:#f6e9d2;font:inherit;font-size:13px}.shop-search input::placeholder{color:#bca681}.shop-search button{border:0;background:none;color:#dfbf83;font-size:22px}
+.shop-promo{position:relative;overflow:hidden;display:flex;align-items:center;min-height:205px;margin:18px 15px 25px;padding:25px;border:1px solid #a47c43;border-radius:13px;background:linear-gradient(90deg,#1b0b05f2 0%,#2c170bd9 55%,#2a150b80),url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1500&q=90') center/cover;box-shadow:0 14px 30px #0006}
+.promo-copy{position:relative;z-index:1;max-width:75%}.promo-copy small{font-size:9px;letter-spacing:2.5px;color:#d7b477}.promo-copy h1{font-size:24px;line-height:1.5;margin:9px 0;color:#f8e9cb}.promo-copy p{font-size:12px;color:#d8c29d;line-height:1.8;margin:0 0 13px}.promo-copy button{border:0;border-radius:5px;background:linear-gradient(135deg,#e7cb91,#b88a48);color:#241308;padding:9px 16px;font-weight:700}.promo-mark{position:absolute;left:22px;top:20px;font:italic 90px Georgia,serif;color:#d7b47730}.promo-dots{position:absolute;bottom:12px;left:50%;display:flex;gap:6px}.promo-dots i{width:6px;height:6px;border-radius:50%;background:#a88a5d}.promo-dots i:first-child{background:#f0d39a}
+.shop-categories{display:flex;gap:10px;overflow-x:auto;padding:0 15px 12px;scrollbar-width:none}.shop-categories::-webkit-scrollbar{display:none}.shop-category{flex:0 0 90px;border:1px solid #654a2c;border-radius:9px;background:#26140b;color:#ead8b7;padding:12px 7px;text-align:center;font-size:11px}.shop-category b{display:block;font-size:23px;margin-bottom:6px;color:#d7b477}
+.shop-section-head{margin-top:12px}
+.product-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:0 15px 25px}
+.product-card{position:relative;overflow:hidden;border:1px solid #65492a;border-radius:11px;background:linear-gradient(160deg,#321c10,#1d0e07);box-shadow:0 9px 20px #0005}
+.product-card img{width:100%;aspect-ratio:1.15/1;display:block;object-fit:cover;background:#241309}
+.product-fav{position:absolute;top:9px;right:9px;width:30px;height:30px;border:1px solid #d2ad6870;border-radius:50%;background:#170a08b8;color:#f0d39a;font-size:18px}
+.product-fav.active{color:#ffb5a7}.product-info{padding:10px}.product-name{font-size:13px;color:#f3e4c8;font-weight:700;min-height:35px}.product-bottom{display:flex;justify-content:space-between;align-items:center;gap:5px;margin-top:8px}.product-price{color:#e2bf7d;font-weight:800;font-size:13px}.product-add{border:0;border-radius:6px;background:#cba365;color:#211006;padding:6px 10px;font-weight:800}
+.shop-cart-count{display:inline-block;margin-right:4px;color:#f2d59b}
+@media(min-width:760px){.shop-promo{min-height:270px;margin:24px 24px 30px;padding:38px}.promo-copy h1{font-size:34px}.shop-categories{justify-content:center}.product-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;padding:0 24px 35px}.product-card img{aspect-ratio:1/1}.shop-search{margin-top:20px}}
+@media(max-width:390px){.shop-promo{min-height:185px;padding:18px}.promo-copy h1{font-size:20px}.product-grid{gap:9px;padding-left:12px;padding-right:12px}}
+</style>
 </head>
 <body><div class="app">
-<header class="top"><div class="toprow"><button class="lang" onclick="toggleLang()" id="langBtn">English</button><div style="text-align:center"><div class="brand" id="brandName" data-brand="حدوته">حدوته</div><div class="tag">COFFEE · DESSERT · MOMENTS</div><div style="height:1px;width:105px;margin:7px auto 0;background:linear-gradient(90deg,transparent,#cda45d,transparent)"></div></div><span style="font-size:22px;color:#e4c58e">✦</span></div></header>
+<header class="top"><div class="toprow"><button class="lang" onclick="toggleLang()" id="langBtn">English</button><div style="text-align:center"><div class="brand" id="brandName" data-brand="حدوته">حدوته</div><div class="tag">COFFEE · DESSERT · MOMENTS</div></div><span style="font-size:22px;color:#e4c58e">✦</span></div><div class="shop-search"><span>⌕</span><input id="quickSearch" placeholder="ابحث في المنيو..." oninput="quickFind(this.value)"><button type="button" aria-label="بحث بالكاميرا" onclick="document.getElementById('cameraPick').click()">▣</button><input id="cameraPick" type="file" accept="image/*" capture="environment" hidden></div></header>
 <main>
 <section id="home" class="view active">
-<div class="hero"><div class="hero-copy"><div class="kicker">COFFEE · DESSERT · MOMENTS</div><h1 id="heroTitle">حكايتك الحلوة تبدأ هنا</h1><p id="heroText">قهوة مظبوطة، حلويات تحبها، ولحظات تستاهل تتعاش.</p><div class="hero-actions"><button class="hero-primary" onclick="go('categories')">اكتشف المنيو ←</button><button class="hero-secondary" onclick="go('searchView')">ابحث عن طلبك</button></div></div><div class="hero-note">HADOTA<small>YOUR DAILY MOMENT</small></div></div>
-<div class="section-head"><h2 id="categoriesHeading">اكتشف الأقسام</h2><small id="allLabel" onclick="go('categories')" style="cursor:pointer">عرض الكل ←</small></div>
-<div class="cats" id="homeCats"></div>
+<div class="shop-promo"><div class="promo-copy"><small>HADOTA SEASONAL PICKS</small><h1 id="heroTitle">عروض الموسم من حدوته</h1><p id="heroText">اختار مشروبك المفضل واستمتع بلحظتك.</p><button onclick="go('categories')">اكتشف المنيو <b>←</b></button></div><div class="promo-mark">H</div><div class="promo-dots"><i></i><i></i><i></i></div></div>
+<div class="shop-categories" id="shopCategories"></div><div class="section-head shop-section-head"><h2>اختيارات حدوته</h2><small>مختارة ليك</small></div><div class="product-grid" id="featuredProducts"></div>
 <div class="experience-block">
 <div class="experience-heading"><span class="eyebrow">THE HADOTA EXPERIENCE</span><h2 data-ar="تفاصيل صغيرة تصنع لحظات أجمل" data-en="Little details. Better moments.">تفاصيل صغيرة تصنع لحظات أجمل</h2><p data-ar="اختار مزاجك من تشكيلتنا، واستمتع بتجربة حدوته." data-en="Choose your mood from our menu and enjoy the Hadota experience.">اختار مزاجك من تشكيلتنا، واستمتع بتجربة حدوته.</p></div>
 <div class="experience-grid">
@@ -1012,7 +1027,7 @@ searchTitle.textContent=lang==='ar'?'ابحث في المنيو':'Search the men
 searchInput.placeholder=lang==='ar'?'اكتب اسم الصنف...':'Type an item name...';
 document.querySelectorAll('[data-ar][data-en]').forEach(el=>{el.textContent=el.dataset[lang]});
 document.querySelectorAll('.bottom span').forEach(s=>s.textContent=s.dataset[lang]);
-draw();
+draw();drawShop();
 if(window.currentCat){
   const c=data.find(x=>x.id===window.currentCat);
   if(c){
@@ -1030,4 +1045,26 @@ if(searchInput.value.trim()) searchItems();
 function openCat(id){window.currentCat=id;let c=data.find(x=>x.id===id);detailTitle.textContent=nm(c);if(id==='dessert'){items.innerHTML='<div class="desserts">'+menuItems(c).map(([ar,en,p,img])=>`<article class="dessert"><img src="${pics[img]}" loading="lazy" decoding="async" alt="${lang==='ar'?ar:(en||'')}"><div>${lang==='ar'?ar:(en||'')}</div></article>`).join('')+'</div>'}else{items.innerHTML='<div class="list">'+menuItems(c).map(([ar,en,p])=>`<div class="item"><span>${lang==='ar'?ar:(en||'')}</span><b class="price">${p==null?'':p+' '+(lang==='ar'?'ج.م':'EGP')}</b></div>`).join('')+'</div>'}go('detail')}
 function searchItems(){let q=searchInput.value.trim().toLowerCase(),out=[];data.forEach(c=>menuItems(c).forEach(it=>{if(q&&(it[0].toLowerCase().includes(q)||it[1].toLowerCase().includes(q)))out.push([it,c])}));searchResults.innerHTML=out.map(([it,c])=>`<div class="item"><span>${lang==='ar'?it[0]:(it[1]||'')}<small style="display:block;color:#9a8876;margin-top:4px">${nm(c)}</small></span><b class="price">${it[2]==null?'':it[2]+' '+(lang==='ar'?'ج.م':'EGP')}</b></div>`).join('')||(lang==='en'?'<div class="item">No results found</div>':'<div class="item">لا توجد نتائج</div>')}
 draw();
+
+// Hadota commerce-style home: product cards, favorites and local cart counter.
+const featured=[
+{id:'coffee',name:'قهوة تركي',en:'Turkish Coffee',price:60,img:'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=900&q=85'},
+{id:'mix',name:'آيس موكا',en:'Iced Mocha',price:150,img:'https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=900&q=85'},
+{id:'dessert',name:'ريد فيلفيت',en:'Red Velvet',price:145,img:'https://images.unsplash.com/photo-1616541823729-00fe0air?auto=format&fit=crop&w=900&q=85'},
+{id:'shisha',name:'شيشة الفاخر',en:'Al Fakher Shisha',price:350,img:'https://images.unsplash.com/photo-1603909223429-69bb7101f420?auto=format&fit=crop&w=900&q=85'},
+{id:'juice',name:'عصير مانجو',en:'Mango Juice',price:120,img:'https://images.unsplash.com/photo-1546173159-315724a31696?auto=format&fit=crop&w=900&q=85'},
+{id:'hot',name:'شاي نعناع',en:'Mint Tea',price:60,img:'https://images.unsplash.com/photo-1544787219-7f47dc7d4f8b?auto=format&fit=crop&w=900&q=85'}
+];
+let hadotaCart=0;
+function drawShop(){
+ const cats=document.getElementById('shopCategories');
+ const products=document.getElementById('featuredProducts');
+ if(!cats||!products)return;
+ cats.innerHTML=data.map(c=>'<button class="shop-category" onclick="openCat(\''+c.id+'\')"><b>'+icons[c.id]+'</b>'+nm(c)+'</button>').join('');
+ products.innerHTML=featured.map((p,i)=>'<article class="product-card"><img src="'+p.img+'" loading="lazy" alt="'+(lang==='ar'?p.name:p.en)+'"><button class="product-fav" aria-label="إضافة للمفضلة" onclick="this.classList.toggle(\'active\');this.textContent=this.classList.contains(\'active\')?\'♥\':\'♡\'">♡</button><div class="product-info"><div class="product-name">'+(lang==='ar'?p.name:p.en)+'</div><div class="product-bottom"><span class="product-price">'+p.price+' '+(lang==='ar'?'ج.م':'EGP')+'</span><button class="product-add" onclick="addToCart()">'+(lang==='ar'?'＋ أضف':'＋ Add')+'</button></div></div></article>').join('');
+}
+function addToCart(){hadotaCart++;const b=document.getElementById('cartCount');if(b)b.textContent=hadotaCart;}
+function quickFind(v){searchInput.value=v;go('searchView');searchItems();searchInput.focus();}
+drawShop();
+
 </script></body></html>
