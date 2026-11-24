@@ -601,6 +601,58 @@ button:focus-visible,input:focus-visible{outline:2px solid #f0d8a2!important;out
 @media(max-width:760px){#brandName.arabic-brand{font-size:51px!important}}
 @media(prefers-reduced-motion:reduce){#brandName.arabic-brand{transform:none}}
 </style>
+
+<style id="hadota-ultra-premium-3d-finish">
+.toprow>div:nth-child(2){position:relative;padding:4px 24px 9px;isolation:isolate}
+.toprow>div:nth-child(2)::before{
+ content:"";position:absolute;z-index:-1;inset:-12px -8px -3px;
+ background:radial-gradient(ellipse at 50% 42%,rgba(225,184,105,.16),rgba(124,78,31,.07) 42%,transparent 72%);
+ border-radius:50%;filter:blur(5px)
+}
+#brandName.arabic-brand{
+ font-family:'Aref Ruqaa',serif!important;
+ font-size:64px!important;line-height:1.24!important;
+ font-weight:700!important;letter-spacing:0!important;
+ background:linear-gradient(180deg,#fffef2 0%,#fff1c8 12%,#f3d995 25%,#d5a64f 43%,#fff0bd 52%,#bd8737 66%,#f8e2a6 78%,#8a5928 100%)!important;
+ -webkit-background-clip:text!important;background-clip:text!important;
+ -webkit-text-fill-color:transparent!important;
+ -webkit-text-stroke:1.35px rgba(255,237,190,.9);
+ text-shadow:
+  0 -1px 0 #fff9e8,
+  0 1px 0 #f8dfa4,
+  0 2px 0 #e5c17c,
+  0 3px 0 #c89a51,
+  0 4px 0 #b17d3c,
+  0 5px 0 #98652e,
+  0 6px 0 #805022,
+  0 7px 0 #693d18,
+  0 8px 0 #512d10,
+  0 9px 0 #3c200b,
+  0 11px 4px rgba(0,0,0,.78),
+  0 17px 22px rgba(0,0,0,.62)!important;
+ filter:drop-shadow(0 0 8px rgba(246,211,143,.28)) drop-shadow(0 0 18px rgba(199,145,66,.18));
+ transform:perspective(900px) rotateX(11deg) translateY(-1px);
+ transform-origin:50% 80%;
+}
+#brandName.arabic-brand::before{
+ color:#704019!important;-webkit-text-fill-color:#704019!important;
+ -webkit-text-stroke:1.2px #bd8b4a!important;
+ transform:translateY(5px) scaleX(1.008)!important;
+ text-shadow:0 2px 0 #8d5c2b,0 4px 0 #603816,0 7px 12px rgba(0,0,0,.9)!important;
+}
+.tag{font-size:9px!important;letter-spacing:3.2px!important;color:#e0c28a!important;text-shadow:0 1px 8px #000}
+.hero,.cat,.experience-card,.dessert{box-shadow:0 18px 44px rgba(0,0,0,.42),inset 0 1px 0 rgba(255,239,202,.12)!important}
+.hero{border-color:rgba(233,196,126,.58)!important}
+.cat{border-color:rgba(220,181,109,.38)!important}
+.cat:hover{transform:translateY(-7px) scale(1.012)!important;border-color:#efd39b!important}
+.hero-primary{box-shadow:0 7px 20px rgba(196,147,67,.22),inset 0 1px 0 rgba(255,255,255,.4)}
+.bottom{box-shadow:0 -12px 35px rgba(0,0,0,.32)}
+@media(max-width:760px){
+ #brandName.arabic-brand{font-size:54px!important}
+ .toprow>div:nth-child(2){padding-inline:14px}
+}
+@media(prefers-reduced-motion:reduce){#brandName.arabic-brand{transform:none}}
+</style>
 </head>
 <body><div class="app">
 <header class="top"><div class="toprow"><button class="lang" onclick="toggleLang()" id="langBtn">English</button><div style="text-align:center"><div class="brand" id="brandName" data-brand="حدوته">حدوته</div><div class="tag">COFFEE · DESSERT · MOMENTS</div><div style="height:1px;width:105px;margin:7px auto 0;background:linear-gradient(90deg,transparent,#cda45d,transparent)"></div></div><span style="font-size:22px;color:#e4c58e">✦</span></div></header>
