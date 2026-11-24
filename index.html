@@ -235,6 +235,46 @@ html[lang="en"] body, html[lang="en"] body button, html[lang="en"] body input, h
 .experience-block{margin:40px 0 20px!important;padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}.experience-block:before{display:none!important}.experience-heading{text-align:center!important;margin-bottom:17px!important}.experience-heading .eyebrow{font-size:8px!important;letter-spacing:2px!important}.experience-heading h2{font-size:21px!important;margin:6px 0!important}.experience-heading p{font-size:10px!important}.experience-grid{display:grid!important;grid-template-columns:1fr!important;gap:10px!important}.experience-card{display:block!important;padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;overflow:hidden!important}.experience-card img{width:100%!important;height:128px!important;display:block!important;object-fit:cover!important;filter:brightness(.78)!important}.experience-card b{display:block!important;text-align:right!important;margin:0!important;padding:7px 2px 2px!important;font-size:12px!important;color:#f4e6ce!important;font-weight:500!important}.experience-cta{display:none!important}
 .site-footer{margin:30px -10px 0!important;padding:22px 18px 24px!important;text-align:center!important;border-top:1px solid rgba(215,181,116,.25)!important;background:#21140f!important}.footer-brand{font-size:32px!important;font-weight:800!important;color:#f2dfb9!important}.site-footer>small{display:block!important;color:#b99759!important;font:8px 'Cormorant Garamond',serif!important;letter-spacing:2px!important;margin-top:3px!important}.footer-links{display:flex!important;justify-content:center!important;gap:18px!important;margin:15px 0!important}.footer-links button{border:0!important;background:none!important;color:#e8d7bd!important;font:10px 'Alexandria',sans-serif!important}.site-footer .copyright{font-size:7px!important;color:#8e7962!important}
 @media(min-width:600px){.app{margin:0 auto!important}.hero{min-height:310px!important}.cat{height:150px!important}}
+</style>
+<style id="hadota-logo-motion">
+/* Elegant animated Hadota wordmark */
+#brandName{
+  position:relative;
+  display:inline-block;
+  transform-origin:center;
+  animation:hadotaLogoFloat 4.8s ease-in-out infinite;
+  background:linear-gradient(105deg,#f2dfb9 0%,#f2dfb9 35%,#fff4d8 48%,#cda45d 55%,#f2dfb9 72%,#f2dfb9 100%);
+  background-size:230% 100%;
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation-name:hadotaLogoFloat,hadotaLogoShine;
+  animation-duration:4.8s,6.5s;
+  animation-timing-function:ease-in-out,ease-in-out;
+  animation-iteration-count:infinite,infinite;
+}
+@keyframes hadotaLogoFloat{
+  0%,100%{transform:translateY(0) scale(1)}
+  50%{transform:translateY(-2px) scale(1.025)}
+}
+@keyframes hadotaLogoShine{
+  0%,35%{background-position:100% 50%}
+  70%,100%{background-position:0% 50%}
+}
+#brandName::after{
+  content:"";
+  position:absolute;
+  left:12%;right:12%;bottom:-4px;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(215,181,116,.8),transparent);
+  transform:scaleX(.55);
+  transform-origin:center;
+  animation:hadotaLogoLine 4.8s ease-in-out infinite;
+}
+@keyframes hadotaLogoLine{0%,100%{opacity:.35;transform:scaleX(.55)}50%{opacity:1;transform:scaleX(1)}}
+@media(prefers-reduced-motion:reduce){
+ #brandName,#brandName::after{animation:none!important}
+ #brandName{-webkit-text-fill-color:#f2dfb9;background:none}
+}
 </style></head>
 <body><div class="app">
 <header class="top"><div class="toprow"><button class="lang" onclick="toggleLang()" id="langBtn">English</button><div style="text-align:center"><div class="brand" id="brandName">حدوته</div><div class="tag">COFFEE · DESSERT · MOMENTS</div><div style="height:1px;width:105px;margin:7px auto 0;background:linear-gradient(90deg,transparent,#cda45d,transparent)"></div></div><span style="font-size:22px;color:#e4c58e">✦</span></div></header>
