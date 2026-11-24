@@ -915,29 +915,15 @@ body{background:#100804}
  letter-spacing:4px!important;
 }
 </style>
-<style id="hadota-commerce-home">
-.shop-search{display:flex;align-items:center;gap:10px;margin:17px auto 0;max-width:760px;padding:0 15px;height:48px;border:1px solid #80613a;border-radius:8px;background:#2a170d;color:#e8d2a8}
-.shop-search>span{font-size:23px;color:#d5b477}.shop-search input{flex:1;min-width:0;border:0;outline:0;background:transparent;color:#f6e9d2;font:inherit;font-size:13px}.shop-search input::placeholder{color:#bca681}.shop-search button{border:0;background:none;color:#dfbf83;font-size:22px}
-.shop-promo{position:relative;overflow:hidden;display:flex;align-items:center;min-height:205px;margin:18px 15px 25px;padding:25px;border:1px solid #a47c43;border-radius:13px;background:linear-gradient(90deg,#1b0b05f2 0%,#2c170bd9 55%,#2a150b80),url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1500&q=90') center/cover;box-shadow:0 14px 30px #0006}
-.promo-copy{position:relative;z-index:1;max-width:75%}.promo-copy small{font-size:9px;letter-spacing:2.5px;color:#d7b477}.promo-copy h1{font-size:24px;line-height:1.5;margin:9px 0;color:#f8e9cb}.promo-copy p{font-size:12px;color:#d8c29d;line-height:1.8;margin:0 0 13px}.promo-copy button{border:0;border-radius:5px;background:linear-gradient(135deg,#e7cb91,#b88a48);color:#241308;padding:9px 16px;font-weight:700}.promo-mark{position:absolute;left:22px;top:20px;font:italic 90px Georgia,serif;color:#d7b47730}.promo-dots{position:absolute;bottom:12px;left:50%;display:flex;gap:6px}.promo-dots i{width:6px;height:6px;border-radius:50%;background:#a88a5d}.promo-dots i:first-child{background:#f0d39a}
-.shop-categories{display:flex;gap:10px;overflow-x:auto;padding:0 15px 12px;scrollbar-width:none}.shop-categories::-webkit-scrollbar{display:none}.shop-category{flex:0 0 90px;border:1px solid #654a2c;border-radius:9px;background:#26140b;color:#ead8b7;padding:12px 7px;text-align:center;font-size:11px}.shop-category b{display:block;font-size:23px;margin-bottom:6px;color:#d7b477}
-.shop-section-head{margin-top:12px}
-.product-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:0 15px 25px}
-.product-card{position:relative;overflow:hidden;border:1px solid #65492a;border-radius:11px;background:linear-gradient(160deg,#321c10,#1d0e07);box-shadow:0 9px 20px #0005}
-.product-card img{width:100%;aspect-ratio:1.15/1;display:block;object-fit:cover;background:#241309}
-.product-fav{position:absolute;top:9px;right:9px;width:30px;height:30px;border:1px solid #d2ad6870;border-radius:50%;background:#170a08b8;color:#f0d39a;font-size:18px}
-.product-fav.active{color:#ffb5a7}.product-info{padding:10px}.product-name{font-size:13px;color:#f3e4c8;font-weight:700;min-height:35px}.product-bottom{display:flex;justify-content:space-between;align-items:center;gap:5px;margin-top:8px}.product-price{color:#e2bf7d;font-weight:800;font-size:13px}.product-add{border:0;border-radius:6px;background:#cba365;color:#211006;padding:6px 10px;font-weight:800}
-.shop-cart-count{display:inline-block;margin-right:4px;color:#f2d59b}
-@media(min-width:760px){.shop-promo{min-height:270px;margin:24px 24px 30px;padding:38px}.promo-copy h1{font-size:34px}.shop-categories{justify-content:center}.product-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;padding:0 24px 35px}.product-card img{aspect-ratio:1/1}.shop-search{margin-top:20px}}
-@media(max-width:390px){.shop-promo{min-height:185px;padding:18px}.promo-copy h1{font-size:20px}.product-grid{gap:9px;padding-left:12px;padding-right:12px}}
-</style>
+
 </head>
 <body><div class="app">
-<header class="top"><div class="toprow"><button class="lang" onclick="toggleLang()" id="langBtn">English</button><div style="text-align:center"><div class="brand" id="brandName" data-brand="حدوته">حدوته</div><div class="tag">COFFEE · DESSERT · MOMENTS</div></div><span style="font-size:22px;color:#e4c58e">✦</span></div><div class="shop-search"><span>⌕</span><input id="quickSearch" placeholder="ابحث في المنيو..." oninput="quickFind(this.value)"><button type="button" aria-label="بحث بالكاميرا" onclick="document.getElementById('cameraPick').click()">▣</button><input id="cameraPick" type="file" accept="image/*" capture="environment" hidden></div></header>
+<header class="top"><div class="toprow"><button class="lang" onclick="toggleLang()" id="langBtn">English</button><div style="text-align:center"><div class="brand" id="brandName" data-brand="حدوته">حدوته</div><div class="tag">COFFEE · DESSERT · MOMENTS</div><div style="height:1px;width:105px;margin:7px auto 0;background:linear-gradient(90deg,transparent,#cda45d,transparent)"></div></div><span style="font-size:22px;color:#e4c58e">✦</span></div></header>
 <main>
 <section id="home" class="view active">
-<div class="shop-promo"><div class="promo-copy"><small>HADOTA SEASONAL PICKS</small><h1 id="heroTitle">عروض الموسم من حدوته</h1><p id="heroText">اختار مشروبك المفضل واستمتع بلحظتك.</p><button onclick="go('categories')">اكتشف المنيو <b>←</b></button></div><div class="promo-mark">H</div><div class="promo-dots"><i></i><i></i><i></i></div></div>
-<div class="shop-categories" id="shopCategories"></div><div class="section-head shop-section-head"><h2>اختيارات حدوته</h2><small>مختارة ليك</small></div><div class="product-grid" id="featuredProducts"></div>
+<div class="hero"><div class="hero-copy"><div class="kicker">COFFEE · DESSERT · MOMENTS</div><h1 id="heroTitle">حكايتك الحلوة تبدأ هنا</h1><p id="heroText">قهوة مظبوطة، حلويات تحبها، ولحظات تستاهل تتعاش.</p><div class="hero-actions"><button class="hero-primary" onclick="go('categories')">اكتشف المنيو ←</button><button class="hero-secondary" onclick="go('searchView')">ابحث عن طلبك</button></div></div><div class="hero-note">HADOTA<small>YOUR DAILY MOMENT</small></div></div>
+<div class="section-head"><h2 id="categoriesHeading">اكتشف الأقسام</h2><small id="allLabel" onclick="go('categories')" style="cursor:pointer">عرض الكل ←</small></div>
+<div class="cats" id="homeCats"></div>
 <div class="experience-block">
 <div class="experience-heading"><span class="eyebrow">THE HADOTA EXPERIENCE</span><h2 data-ar="تفاصيل صغيرة تصنع لحظات أجمل" data-en="Little details. Better moments.">تفاصيل صغيرة تصنع لحظات أجمل</h2><p data-ar="اختار مزاجك من تشكيلتنا، واستمتع بتجربة حدوته." data-en="Choose your mood from our menu and enjoy the Hadota experience.">اختار مزاجك من تشكيلتنا، واستمتع بتجربة حدوته.</p></div>
 <div class="experience-grid">
@@ -950,13 +936,13 @@ body{background:#100804}
 </section>
 <section id="categories" class="view"><div class="section-signature"><span class="signature-name">حدوته</span><i>COFFEE · DESSERT · MOMENTS</i></div><button class="back" onclick="go('home')" id="backCats">← الرئيسية</button><div class="section-head"><h2 id="allCatsTitle">كل الأقسام</h2></div><div class="cats" id="allCats"></div></section>
 <section id="detail" class="view"><div class="section-signature"><span class="signature-name">حدوته</span><i>COFFEE · DESSERT · MOMENTS</i></div><button class="back" onclick="go('categories')" id="backDetail">← رجوع</button><div class="detail-hero"><h1 id="detailTitle"></h1></div><div id="items"></div></section>
-<section id="searchView" class="view"><div class="section-signature"><span class="signature-name">حدوته</span><i>COFFEE · DESSERT · MOMENTS</i></div><div class="section-head" style="margin-top:20px"><h2 id="searchTitle">ابحث في المنيو</h2></div><input class="searchbox" id="searchInput" placeholder="اكتب اسم الصنف..." oninput="searchItems()"><div class="list" id="searchResults"></div></section><section id="cartView" class="view"><div class="section-head" style="margin-top:25px"><h2>سلة الطلبات</h2></div><div class="list"><div class="item"><span>عدد الأصناف المضافة</span><b class="price" id="cartSummary">0</b></div></div></section><section id="profileView" class="view"><div class="section-head" style="margin-top:25px"><h2>حسابي</h2></div><div class="list"><div class="item"><span>أهلاً بك في حدوته</span><b class="price">HADOTA</b></div></div></section>
+<section id="searchView" class="view"><div class="section-signature"><span class="signature-name">حدوته</span><i>COFFEE · DESSERT · MOMENTS</i></div><div class="section-head" style="margin-top:20px"><h2 id="searchTitle">ابحث في المنيو</h2></div><input class="searchbox" id="searchInput" placeholder="اكتب اسم الصنف..." oninput="searchItems()"><div class="list" id="searchResults"></div></section>
 </main>
 <footer class="site-footer"><div class="footer-brand">حدوته</div><small>COFFEE · DESSERT · MOMENTS</small><div class="footer-links"><button onclick="go('home')">الرئيسية</button><button onclick="go('categories')">المنيو</button><button onclick="go('searchView')">بحث</button></div><small class="copyright">© HADOTA CAFE</small></footer></div>
 <nav class="bottom"><div class="bottomin">
 <button class="on" data-go="home" onclick="nav('home',this)"><em>⌂</em><span data-ar="الرئيسية" data-en="Home">الرئيسية</span></button>
 <button data-go="categories" onclick="nav('categories',this)"><em>▦</em><span data-ar="الأقسام" data-en="Menu">الأقسام</span></button>
-<button data-go="searchView" onclick="nav('searchView',this)"><em>⌕</em><span data-ar="بحث" data-en="Search">بحث</span></button><button data-go="cartView" onclick="nav('cartView',this)"><em>🛒</em><span>السلة <b id="cartCount" class="shop-cart-count">0</b></span></button><button data-go="profileView" onclick="nav('profileView',this)"><em>♙</em><span>حسابي</span></button>
+<button data-go="searchView" onclick="nav('searchView',this)"><em>⌕</em><span data-ar="بحث" data-en="Search">بحث</span></button>
 </div></nav>
 <script>
 // Resolve page elements explicitly instead of relying on browser-created global ID variables.
@@ -1027,7 +1013,7 @@ searchTitle.textContent=lang==='ar'?'ابحث في المنيو':'Search the men
 searchInput.placeholder=lang==='ar'?'اكتب اسم الصنف...':'Type an item name...';
 document.querySelectorAll('[data-ar][data-en]').forEach(el=>{el.textContent=el.dataset[lang]});
 document.querySelectorAll('.bottom span').forEach(s=>s.textContent=s.dataset[lang]);
-draw();drawShop();
+draw();
 if(window.currentCat){
   const c=data.find(x=>x.id===window.currentCat);
   if(c){
